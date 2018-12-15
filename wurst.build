@@ -1,0 +1,9 @@
+---
+projectName: "sheeptagfixus"
+dependencies:
+- "https://github.com/wurstscript/wurstStdlib2"
+buildMapData:
+  name: "Ultimate Sheep Tag Fixus 1.13"
+  fileName: "Ultimate Sheep Tag Fixus 1.13"
+  author: "verit"
+  playerCount: 12
