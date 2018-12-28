@@ -54,10 +54,10 @@
 ## Version 1.11
 - Made all content RoC-friendly
 - Nerfed Battleship
--     Changed to Doom Guard (RoC/TFT reasons)
--     Reduced range to 64
--     Increased movement speed to match Black
--     No longer flying
+  - Changed to Doom Guard (RoC/TFT reasons)
+  - Reduced range to 64
+  - Increased movement speed to match Black
+  - No longer flying
 - Necklace changed to Spell Immunity
 - Divine Shield cooldown decreased (+15/+10/+5 of duration)
 - Slightly increased range of CoF by 16
@@ -97,9 +97,9 @@
 - Game should now end when the last player of a team leaves
 - Full shared control is now granded via the allies menu
 - Added the Jotye Farm for Silver and Golden Sheep
--     100 gold
--     Inverts point orders in 512 area
--     5 bounty
+  - 100 gold
+  - Inverts point orders in 512 area
+  - 5 bounty
 - Added -d on and -d off along with D ability
 - Added the Gem easteregg
 - Added the Dolly eastereggs
@@ -110,10 +110,10 @@
 - Changed Attack Notification Interval to 1 from 30
 - Changed Attack Notification Range to 256 from 1250
 - Nerfed the Battleship
--     Changed movement speed to 405 from 522
--     Changed range to 128 from 500
--     Added projectile animation
--     Changed some other stats...
+  - Changed movement speed to 405 from 522
+  - Changed range to 128 from 500
+  - Added projectile animation
+  - Changed some other stats...
 - Dagger now works on RoC
 
 ## Version 1.8
@@ -141,16 +141,16 @@
 - Black Wolves are now spell immune instead of invul
 - Buffed Boots of Speed, 5 to 30
 - Shepherds are actually killable
--     100 base HP, .5 base regen
--     1000 HP per str, .25 regen per str
--     4.8 str per level
--     9.6 str per level - black
+  - 100 base HP, .5 base regen
+  - 1000 HP per str, .25 regen per str
+  - 4.8 str per level
+  - 9.6 str per level - black
 - Tiny farm has standard farm model
 - Devotion Aura now adds 3 armor instead of 1
 - Added Dolly
 - Shepherds are now agility heroes
--     2.4 per level
--     3.6 - black
+  - 2.4 per level
+  - 3.6 - black
 
 ## Version 1.6
 - Ward can no longer be casted across the map
@@ -159,7 +159,7 @@
 
 ## Version 1.5
 - Fixed issue with constant data (item/farm IDs) were completely wrong
--     Fixed -buy, -sell, and kill return
+  - Fixed -buy, -sell, and kill return
 
 ## Version 1.4
 - A lot of changes I did not record. --------------------
