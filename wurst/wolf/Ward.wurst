@@ -1,11 +1,11 @@
 package Ward
 import ClosureEvents
+import Types
 
-let WARD_ABILITY_ID = 'A001'
-let WARD_UNIT_TYPE = 'oeye'
+constant real duration = 240
 
 init
-	EventListener.onPointCast(WARD_ABILITY_ID) (caster, tpos) ->
-		createUnit(caster.getOwner(), WARD_UNIT_TYPE, tpos, 0 .fromDeg())
+	EventListener.onPointCast(AbilityIds.ward) (caster, tpos) ->
+		createUnit(caster.getOwner(), UnitIds.ward, tpos, 0 .fromDeg())
 			..setXY(tpos)
-			..setTimedLife(240)
+			..setTimedLife(duration)

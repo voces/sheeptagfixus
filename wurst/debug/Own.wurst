@@ -1,0 +1,13 @@
+package Own
+import ClosureEvents
+import ClosureForGroups
+
+init
+	for i = 0 to bj_MAX_PLAYER_SLOTS - 1
+		players[i].setGold(10000)
+		players[i].setLumber(10000)
+
+	EventListener.add(EVENT_PLAYER_CHAT_FILTER) () ->
+		player p = GetTriggerPlayer()
+		forUnitsSelected(p) u ->
+			u.setOwner(p, false)

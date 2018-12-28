@@ -1,0 +1,18 @@
+package CloakOfFlames
+import ClosureForGroups
+import ClosureTimers
+import Types
+
+constant real baseRange = 256
+constant real stackRange = 32
+constant real damage = 15
+
+init
+	doPeriodically(1) cb ->
+		// TODO: we can just enumerate through main units when they're in Wurst
+		forUnitsAll() attacker ->
+			int cloaks = attacker.itemCount(ItemIds.cloakOfFlames)
+			if cloaks > 0
+				forUnitsInRange(attacker.getPos(), baseRange + (cloaks - 1) * stackRange) target ->
+					if target.isType(UNIT_TYPE_STRUCTURE)
+						attacker.damageTarget(target, damage * cloaks, ATTACK_TYPE_MAGIC)

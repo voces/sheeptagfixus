@@ -1,0 +1,10 @@
+package Types
+
+public class AbilityIds
+	static constant ward = 'A001'
+
+public class UnitIds
+	static constant ward = 'oeye'
+
+public class ItemIds
+	static constant cloakOfFlames = 'clfm'

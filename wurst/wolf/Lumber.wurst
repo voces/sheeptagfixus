@@ -1,0 +1,11 @@
+package Lumber
+import ClosureEvents
+
+constant int minLevel = 3
+constant int lumberPerLevel = 2
+
+init
+	EventListener.add(EVENT_PLAYER_HERO_LEVEL) ->
+		unit u = GetLevelingUnit()
+		if u.getLevel() >= minLevel
+			u.getOwner().addLumber(lumberPerLevel)
