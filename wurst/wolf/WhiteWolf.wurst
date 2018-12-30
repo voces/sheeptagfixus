@@ -1,0 +1,57 @@
+package WhiteWolf
+import ClosureEvents
+import ClosureTimers
+import TimerUtils
+import TimerDialog
+import Types
+
+constant vec2 corner = vec2(-6144, -6656)
+constant real wwDuration = 60
+
+init
+	EventListener.add(EVENT_PLAYER_UNIT_PICKUP_ITEM) ->
+		item obtainedItem = GetManipulatedItem()
+		if obtainedItem.getTypeId() == ItemIds.whiteWolf
+			
+			unit wolfUnit = GetTriggerUnit()
+			player owner = wolfUnit.getOwner()
+			
+			// Clean up - remove item and hide the main wolf
+			obtainedItem.remove()
+			vec2 pos = wolfUnit.getPos()
+			wolfUnit..pause()
+				..setOwner(players[PLAYER_NEUTRAL_PASSIVE], false)
+				..setXY(corner)
+
+			// Setup the new white wolf unit
+			unit ww = createUnit(owner, UnitIds.whiteWolf, pos, wolfUnit.getFacingAngle())
+			owner.select(ww)
+
+			// Timer
+			timer wwTimer = getTimer()
+			timerdialog wwDialog = wwTimer.createTimerDialog()
+				..setTitle("Changing in...")
+			if GetLocalPlayer() == owner
+				wwDialog.display(true)
+
+			// An empty lambda... because I don't want to bother doing the alternative
+			wwTimer.start(wwDuration, () -> DoNothing())
+			doAfter(wwDuration) ->
+
+				// Timer clean up
+				wwTimer.release()
+				if GetLocalPlayer() == owner
+					wwDialog.display(false)
+				// wwDialog.destr()
+
+				// Clean up white wolf
+				pos = ww.getPos()
+				angle facing = ww.getFacingAngle()
+				ww.remove()
+
+				// Restore wolf unit
+				wolfUnit..unpause()
+					..setXY(pos)
+					..setOwner(owner, false)
+					..setFacing(facing)
+				owner.select(wolfUnit)

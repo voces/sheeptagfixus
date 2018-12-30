@@ -1,0 +1,22 @@
+package Gem
+import ClosureEvents
+import HashMap
+import Types
+
+constant gemActivated = new HashMap<item, boolean>
+
+init 
+	EventListener.add(EVENT_PLAYER_UNIT_USE_ITEM) ->
+		item usedItem = GetManipulatedItem()
+		if usedItem.getTypeId() == ItemIds.gem
+			player owner = GetManipulatingUnit().getOwner()
+			boolean activated = gemActivated.get(usedItem)
+			if activated
+				gemActivated.put(usedItem, false)
+				DisplayTextToPlayer(owner, 0, 0, "Gem deactivated.")
+			else
+				gemActivated.put(usedItem, true)
+				if GetRandomInt(0, 100) == 0
+					DisplayTextToPlayer(owner, 0, 0, "Perfect gem activated.")
+				else
+					DisplayTextToPlayer(owner, 0, 0, "Gem activated.")

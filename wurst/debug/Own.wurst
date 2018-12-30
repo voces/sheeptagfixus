@@ -4,14 +4,9 @@ import ClosureForGroups
 import Debug
 
 init
-
 	if DEBUGGING_ENABLED
-
-		for i = 0 to bj_MAX_PLAYER_SLOTS - 1
-			players[i].setGold(10000)
-			players[i].setLumber(10000)
-
 		EventListener.add(EVENT_PLAYER_CHAT_FILTER) () ->
-			player p = GetTriggerPlayer()
-			forUnitsSelected(p) u ->
-				u.setOwner(p, false)
+			if GetEventPlayerChatString() == "-own"
+				player p = GetTriggerPlayer()
+				forUnitsSelected(p) u ->
+					u.setOwner(p, false)

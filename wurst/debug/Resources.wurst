@@ -1,0 +1,8 @@
+package Resources
+import Debug
+
+init
+	if DEBUGGING_ENABLED
+		for i = 0 to bj_MAX_PLAYER_SLOTS - 1
+			players[i].setGold(10000)
+			players[i].setLumber(10000)

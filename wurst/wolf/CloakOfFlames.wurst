@@ -10,6 +10,7 @@ constant real damage = 15
 init
 	doPeriodically(1) cb ->
 		// TODO: we can just enumerate through main units when they're in Wurst
+		// TODO: this gives mirrors (full) cloak damage
 		forUnitsAll() attacker ->
 			int cloaks = attacker.itemCount(ItemIds.cloakOfFlames)
 			if cloaks > 0

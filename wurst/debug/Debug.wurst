@@ -1,3 +1,9 @@
 package Debug
 
-public constant DEBUGGING_ENABLED = false
+public boolean DEBUGGING_ENABLED = true
+
+init
+	for i = 0 to bj_MAX_PLAYER_SLOTS - 1
+		if players[i].isIngame()
+			if players[i].getName() != "WorldEdit"
+				DEBUGGING_ENABLED = false

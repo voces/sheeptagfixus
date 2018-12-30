@@ -5,6 +5,9 @@ public class AbilityIds
 
 public class UnitIds
 	static constant ward = 'oeye'
+	static constant whiteWolf = 'eC16'
 
 public class ItemIds
 	static constant cloakOfFlames = 'clfm'
+	static constant whiteWolf = 'I003'
+	static constant gem = 'gemt'
